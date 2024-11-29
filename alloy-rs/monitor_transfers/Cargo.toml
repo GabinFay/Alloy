@@ -1,0 +1,45 @@
+[package]
+name = "uniswap_bot"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.79"
+authors = ["Alloy Contributors"]
+license = "MIT OR Apache-2.0"
+homepage = "https://github.com/alloy-rs/examples"
+repository = "https://github.com/alloy-rs/examples"
+publish = false
+exclude = ["examples/"]
+
+[dependencies]
+alloy = { version = "0.6.4", features = [
+    "full",
+    "eips",
+    "hyper",
+    "json-rpc",
+    "node-bindings",
+    "rpc-client",
+    "rpc-types-debug",
+    "rpc-types-trace",
+    "signer-aws",
+    "signer-keystore",
+    "signer-ledger",
+    "signer-mnemonic",
+    "signer-trezor",
+    "signer-yubihsm",
+] }
+dotenv = "0.15"
+
+revm-primitives = "14.0"
+revm = "18.0"
+
+# async
+futures-util = "0.3"
+tokio = { version = "1", features = ["full"] }
+
+# misc
+eyre = "0.6"
+serde = "1.0"
+serde_json = "1.0"
+
+[patch.crates-io]
+# alloy = { git = "https://github.com/alloy-rs/alloy", rev = "65dfbe" }
